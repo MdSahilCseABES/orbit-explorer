@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080a0c" />
+  <meta name="description" content="An interactive journey through our solar system. Explore eight worlds in a real-time 3D observatory." />
+  <title>ORBIT — A little perspective.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="./" aria-label="Orbit home"><span class="brand-icon">◉</span> ORBIT<span class="brand-dot">®</span></a>
+    <nav aria-label="Main navigation"><button class="nav-item active" id="explore-nav">Explore <span>↗</span></button><button class="nav-item" id="about-button">The mission</button></nav>
+    <div class="live"><span></span> LIVE SIMULATION <i>01 / SOL</i></div>
+  </header>
+  <main>
+    <section class="hero" aria-label="Solar system explorer">
+      <div class="hero-copy"><div class="eyebrow"><span></span> YOUR PLACE IN THE UNIVERSE</div><h1>A little<br /><em>perspective.</em></h1><p>Eight worlds. One star. Infinite wonder.<br />Take a moment to explore our cosmic neighborhood.</p><button class="primary-button" id="journey-button">Begin your journey <span>↗</span></button></div>
+      <div id="universe" aria-label="Interactive 3D solar system. Drag to orbit, scroll to zoom, or select a planet below." role="img"></div>
+      <div class="scene-label"><span class="crosshair">+</span><div>SOLAR SYSTEM<span>THE MILKY WAY · ORION ARM</span></div></div>
+      <div class="scene-coordinate">25,000 LY FROM GALACTIC CENTER <span>↗</span></div>
+      <aside class="planet-card" aria-live="polite">
+        <div class="card-top"><span class="eyebrow">CURRENTLY EXPLORING</span><span id="planet-index">03 / 08</span></div>
+        <div class="planet-title"><h2 id="planet-name">Earth</h2><span id="planet-symbol">⊕</span></div>
+        <div class="planet-type" id="planet-type">THE BLUE PLANET</div>
+        <p id="planet-description">Our pale blue dot. The only world we know of with liquid oceans on the surface and life among the stars.</p>
+        <div class="planet-stats"><div><span>DISTANCE FROM SUN</span><strong id="planet-distance">149.6 <small>M KM</small></strong></div><div><span>ORBITAL PERIOD</span><strong id="planet-period">365 <small>DAYS</small></strong></div></div>
+        <button id="focus-button" class="text-button">Get a closer look <span>↗</span></button>
+      </aside>
+      <div class="view-tools"><button id="reset-button" aria-label="Reset camera view" title="Reset view">↺</button><span></span><button id="zoom-in" aria-label="Zoom in" title="Zoom in">+</button><button id="zoom-out" aria-label="Zoom out" title="Zoom out">−</button></div>
+      <div class="interaction-hint"><span>⤧</span> DRAG TO ORBIT <i>·</i> SCROLL TO ZOOM</div>
+      <div class="scale-note"><span></span> A NEW WAY TO SEE HOME</div>
+      <div id="loading" class="loading">Charting the cosmos…</div>
+    </section>
+    <section class="explorer-panel" aria-label="Planet controls">
+      <div class="panel-heading"><div><span class="eyebrow">PICK A DESTINATION</span><span class="destination-caption">Curiosity looks good on you.</span></div><div class="playback"><button id="pause-button" aria-label="Pause simulation">Ⅱ</button><span>TIME SPEED</span><button id="speed-button" title="Change simulation speed">1×</button></div></div>
+      <div class="planet-list" id="planet-list"></div>
+    </section>
+  </main>
+  <footer><span>A SMALL EXPLORATION OF SOMETHING BIG.</span><span>MADE FOR THE CURIOUS <span class="footer-star">✳</span></span><span>EST. 2026 <span class="footer-dot">·</span> EARTH, SOLAR SYSTEM</span></footer>
+  <dialog id="mission-dialog" aria-labelledby="mission-title"><button id="close-dialog" aria-label="Close mission dialog">×</button><span class="eyebrow">THE MISSION</span><h2 id="mission-title">Look up.<br /><em>Stay curious.</em></h2><p>ORBIT is a little invitation to step back and discover the worlds that share our star. Drag to explore, pick a planet, and see our neighborhood from a different perspective.</p><p class="dialog-note">Planet sizes, distances, and orbital speeds are artistically scaled for exploration. Planetary facts are approximate.</p><button class="primary-button" id="dialog-explore">Let's explore <span>↗</span></button></dialog>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
